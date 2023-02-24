@@ -137,7 +137,10 @@ export default function Projects() {
       <div className="container">
         <div className="projects__content">
           <h2 className="boldfont movingText">
-            Works & Projects Works & Projects
+            ■ Works ■ Projects ■ Works ■ Projects
+          </h2>
+          <h2 className="boldfont movingText movingTextSecond">
+            ■ Works ■ Projects ■ Works ■ Projects
           </h2>
           {projectArr.map((project) => (
             <div

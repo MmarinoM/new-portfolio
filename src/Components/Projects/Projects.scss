@@ -2,7 +2,7 @@
   position: relative;
   min-height: 60vh;
   padding-bottom: 100px;
-  padding-top: 100px;
+  padding-top: 200px;
   .container {
     overflow: hidden;
   }
@@ -31,14 +31,17 @@
   font-size: 100px;
   max-width: none;
   position: absolute;
-  left: 0;
+  left: -2017px;
   top: 0;
-  animation: my-animation 50s infinite;
+  animation: my-animation 50s infinite linear;
   white-space: nowrap;
+}
+.movingTextSecond {
+  left: 0;
 }
 @keyframes my-animation {
   from {
-    -webkit-transform: translateX(-100%);
+    -webkit-transform: translateX(0%);
   }
   to {
     -webkit-transform: translateX(100%);
