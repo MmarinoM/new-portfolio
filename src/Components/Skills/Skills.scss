@@ -1,0 +1,12 @@
+.skills {
+  // background-color: #cc70d8;
+  position: relative;
+  min-height: 80vh;
+  * {
+    color: white;
+  }
+
+  &__content {
+    padding-top: 10px;
+  }
+}

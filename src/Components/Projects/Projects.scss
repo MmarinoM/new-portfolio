@@ -1,0 +1,46 @@
+.projects {
+  position: relative;
+  min-height: 60vh;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  .container {
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    display: none;
+    background-image: url("../../assets/yellow.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    height: 100px;
+    position: absolute;
+    top: -99px;
+  }
+
+  &__content {
+    padding-top: 10px;
+    h2 {
+      margin-bottom: 100px;
+    }
+  }
+}
+.movingText {
+  color: white;
+  font-size: 100px;
+  max-width: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: my-animation 50s infinite;
+  white-space: nowrap;
+}
+@keyframes my-animation {
+  from {
+    -webkit-transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+  }
+}

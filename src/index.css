@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #434343;
+}
+body {
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  font-size: 58px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+.container {
+  width: 100%;
+  max-width: 1160px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: "theboldfont";
+  src: local("theboldfont"), url("./fonts/theboldfont.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "consola";
+  src: local("consola"), url("./fonts/consola.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "fort";
+  src: local("fort"), url("./fonts/fort.otf") format("opentype");
+  font-weight: regular;
+}
+.boldfont {
+  font-family: "theboldfont";
+}
+.consola {
+  font-family: "consola";
+}
+.fortFont {
+  font-family: "fort";
+}
