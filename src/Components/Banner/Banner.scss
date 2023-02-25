@@ -107,6 +107,7 @@
     align-items: flex-start;
     flex-direction: column;
     position: relative;
+    max-width: 700px;
     // transform: rotate(-10deg);
     &:before {
       content: "";
@@ -170,9 +171,55 @@
     }
   }
   &__imgContainer {
-    opacity: 0;
+    position: relative;
+    left: -100px;
+    width: 900px;
+
     @media (max-width: 950px) {
       display: none;
     }
+  }
+  svg {
+    fill: white;
+    width: 200px;
+    // transition: 0.2s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+    .animRound {
+      animation: round 6s infinite linear;
+      animation-play-state: paused;
+    }
+    &:hover {
+      // scale and stop animation
+      transform: scale(1.1);
+      .animRound {
+        animation-play-state: running;
+      }
+    }
+    @keyframes round {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+      }
+      100% {
+        transform: rotate(360deg);
+        transform-origin: 50% 50%;
+      }
+    }
+  }
+  #calque_github {
+    top: 0px;
+    left: 240px;
+    width: 180px;
+  }
+  #calque_linkedin {
+    top: 185px;
+    width: 120px;
+    left: 220px;
+  }
+  #calque_mail {
+    top: 30px;
+    left: 20px;
+    width: 220px;
   }
 }

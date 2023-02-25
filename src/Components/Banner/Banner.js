@@ -3,7 +3,9 @@ import "./Banner.scss";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
 // import frontEnd from "../../assets/front-end.svg";
-import character from "../../assets/character.svg";
+import { ReactComponent as Logo } from "../../assets/github.svg";
+import { ReactComponent as LogoLinkedin } from "../../assets/linkedin.svg";
+import { ReactComponent as LogoEmail } from "../../assets/email.svg";
 // import TypeAnimation from "react-type-animation";
 export default function Banner() {
   const tl = useRef();
@@ -51,7 +53,7 @@ export default function Banner() {
       )
       .staggerFromTo(
         ".stag",
-        1,
+        0.3,
         {
           opacity: 0,
           y: 100,
@@ -59,7 +61,20 @@ export default function Banner() {
         {
           opacity: 1,
           y: 0,
-          ease: "power3.out",
+        },
+        0.2,
+        "-=0.5"
+      )
+      .staggerFromTo(
+        ".calque_anim",
+        0.5,
+        {
+          opacity: 0,
+          scale: 0.3,
+        },
+        {
+          opacity: 1,
+          scale: 1,
         },
         0.2,
         "-=0.5"
@@ -132,7 +147,9 @@ export default function Banner() {
             </p>
           </div>
           <div className="banner__imgContainer">
-            <img src={character} alt="" />
+            <Logo />
+            <LogoLinkedin />
+            <LogoEmail />
           </div>
         </div>
       </div>
