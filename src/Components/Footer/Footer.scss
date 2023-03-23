@@ -1,5 +1,5 @@
 .footer {
-  background-color: #696df6;
+  background-color: transparent;
   overflow: hidden;
   &__content {
     display: flex;
@@ -11,6 +11,12 @@
       margin-right: 10px;
       font-size: 12px;
       color: white;
+      opacity: 0.4;
+    }
+    img {
+      width: 55px;
+      opacity: 0.8;
+      max-height: 80px;
     }
   }
 }

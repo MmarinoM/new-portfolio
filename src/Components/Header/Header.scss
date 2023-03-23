@@ -16,6 +16,9 @@ header {
   }
   .logo {
     width: 80px;
+    @media (max-width: 550px) {
+      width: 60px;
+    }
     img {
       width: 100%;
     }

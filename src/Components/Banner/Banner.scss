@@ -2,9 +2,18 @@
   max-width: 100%;
   overflow: hidden;
   margin-bottom: 100px;
+  .container {
+    max-width: 1300px;
+    padding-left: 90px;
+    padding-right: 90px;
+    @media (max-width: 750px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
   .bubblemove {
     width: 800px;
-    height: 600px;
+    height: 70vh;
     border-radius: 50%;
     position: fixed;
 
@@ -94,10 +103,14 @@
   &__content {
     padding-top: 200px;
     // height: 800px;
+    @media (max-width: 1080px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     @media (max-width: 750px) {
-      padding-top: 150px;
-      height: 750px;
+      padding-top: 100px;
+      // height: 750px;
     }
 
     display: flex;
@@ -108,6 +121,13 @@
     flex-direction: column;
     position: relative;
     max-width: 700px;
+    @media (max-width: 1180px) {
+      width: 60%;
+    }
+    @media (max-width: 1080px) {
+      width: 100%;
+      max-width: none;
+    }
     // transform: rotate(-10deg);
     &:before {
       content: "";
@@ -116,6 +136,9 @@
       height: 400px;
       background-color: white;
       left: -30px;
+      @media (max-width: 750px) {
+        display: none;
+      }
     }
     .frontend {
       color: white;
@@ -151,7 +174,12 @@
       left: -20px;
       @media (max-width: 750px) {
         font-size: 70px;
-        margin-bottom: 100px;
+        margin: 0;
+        margin-bottom: 10px;
+        line-height: 60px;
+        text-align: center;
+        width: 100%;
+        left: 0;
       }
     }
     .front-end {
@@ -167,33 +195,51 @@
         width: 100%;
         max-width: 100%;
         height: auto;
+        font-size: 13px;
       }
     }
   }
   &__imgContainer {
     position: relative;
     left: -100px;
-    width: 900px;
+    width: 470px;
+    height: 380px;
 
-    @media (max-width: 950px) {
-      display: none;
+    @media (max-width: 1180px) {
+      left: inherit;
+    }
+    @media (max-width: 1080px) {
+      margin-top: 20px;
+    }
+    @media (max-width: 650px) {
+      transform: scale(0.8);
+      transform-origin: center;
+      margin-top: 0;
     }
   }
   svg {
     fill: white;
     width: 200px;
+    opacity: 0.9;
     // transition: 0.2s ease-in-out;
     position: absolute;
     cursor: pointer;
     .animRound {
-      animation: round 6s infinite linear;
+      animation: round 8s infinite linear;
       animation-play-state: paused;
+      @media (max-width: 750px) {
+        animation: round 18s infinite linear;
+        animation-play-state: running;
+      }
     }
     &:hover {
       // scale and stop animation
-      transform: scale(1.1);
+      // transform: scale(1.1);
       .animRound {
         animation-play-state: running;
+        @media (max-width: 750px) {
+          animation-play-state: paused;
+        }
       }
     }
     @keyframes round {
@@ -206,6 +252,16 @@
         transform-origin: 50% 50%;
       }
     }
+    @keyframes round2 {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+      }
+      100% {
+        transform: rotate(-360deg);
+        transform-origin: 50% 50%;
+      }
+    }
   }
   #calque_github {
     top: 0px;
@@ -213,13 +269,18 @@
     width: 180px;
   }
   #calque_linkedin {
-    top: 185px;
-    width: 120px;
-    left: 220px;
+    top: 166px;
+    left: 360px;
+    width: 90px;
   }
   #calque_mail {
     top: 30px;
     left: 20px;
     width: 220px;
+  }
+  #calque_resume {
+    top: 180px;
+    left: 200px;
+    width: 160px;
   }
 }

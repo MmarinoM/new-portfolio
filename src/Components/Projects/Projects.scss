@@ -2,9 +2,12 @@
   position: relative;
   min-height: 60vh;
   padding-bottom: 100px;
-  padding-top: 200px;
+  padding-top: 160px;
   .container {
     overflow: hidden;
+  }
+  .singleProjectAnimation {
+    width: calc(50% - 20px);
   }
   &::before {
     content: "";
@@ -21,6 +24,9 @@
 
   &__content {
     padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     h2 {
       margin-bottom: 100px;
     }
@@ -28,10 +34,10 @@
 }
 .movingText {
   color: white;
-  font-size: 100px;
+  font-size: 72px;
   max-width: none;
   position: absolute;
-  left: -2017px;
+  left: -2220px;
   top: 0;
   animation: my-animation 50s infinite linear;
   white-space: nowrap;

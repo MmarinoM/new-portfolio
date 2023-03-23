@@ -6,7 +6,7 @@ import { useRef, useEffect } from "react";
 import { ReactComponent as Logo } from "../../assets/github.svg";
 import { ReactComponent as LogoLinkedin } from "../../assets/linkedin.svg";
 import { ReactComponent as LogoEmail } from "../../assets/email.svg";
-// import TypeAnimation from "react-type-animation";
+import { ReactComponent as LogoResume } from "../../assets/resume.svg";
 export default function Banner() {
   const tl = useRef();
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Banner() {
       )
       .staggerFromTo(
         ".calque_anim",
-        0.5,
+        0.3,
         {
           opacity: 0,
           scale: 0.3,
@@ -76,7 +76,7 @@ export default function Banner() {
           opacity: 1,
           scale: 1,
         },
-        0.2,
+        0.15,
         "-=0.5"
       )
       .fromTo(
@@ -128,7 +128,7 @@ export default function Banner() {
       <div className="container">
         <div className="banner__content">
           <div className="banner__aboutContent">
-            <span className="consola frontend stag">FRONT END DEVELOPER</span>
+            <span className="consola frontend stag">WEB DEVELOPER</span>
             <h1 className="boldfont stag">
               <span>Michael</span>
               <br />
@@ -136,20 +136,19 @@ export default function Banner() {
               {/* <img src={frontEnd} alt="" className="front-end" /> */}
             </h1>
             <p className="consola about stag">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Saepnesciunt totam tenetur ex, quod dicta ipsum eveniet expedita
-              mollitia aperiam soluta cupiditate quibusdam aut illo similique
-              sit accusantium natus? Reiciendis? Lorem ipsum dolor sit amet
-              consectetur, adipisicing elit. Saepe nesciunt totam tenetur ex,
-              quod dicta ipsum eveniet expedita mollitia aperiam soluta
-              cupiditate quibusdam aut illo similique sit accusantium natus?
-              Reiciendis?
+              Hi! I’m Michael. I’m 33, I’m a front-end developer based in Liège,
+              Belgium. I worked in a web agency where I developed websites and
+              mobile applications for customers. I love both code and design.
+              I’m currently honing my react skills. When I’m not coding, I like
+              listen to a loooooot of music and play some squash or basketball.
+              On weekends, I tend to morph into a hard-core Inter Milan fan.
             </p>
           </div>
           <div className="banner__imgContainer">
             <Logo />
             <LogoLinkedin />
             <LogoEmail />
+            <LogoResume />
           </div>
         </div>
       </div>

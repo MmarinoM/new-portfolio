@@ -1,147 +1,68 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Navbar.scss";
-import gsap from "gsap";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
-  const menuMobileRef = useRef(null);
-  const tl = useRef();
-  const q = gsap.utils.selector(menuRef);
-  const q2 = gsap.utils.selector(menuMobileRef);
-  let animating = false;
+  const hoverAnim = useRef(null);
+  useEffect(() => {
+    //scroll event listener
+    window.addEventListener("scroll", () => {
+      //get menuRef offsetTop
+      const workSectionOffset =
+        document.querySelector(".projects").offsetTop - 100;
+      const skillsSectionOffset =
+        document.querySelector(".skills").offsetTop - 200;
+      console.log(workSectionOffset);
+      console.log(skillsSectionOffset);
+      console.log(window.scrollY);
+      if (window.scrollY >= workSectionOffset) {
+        menuRef.current.classList.add("current_2");
+      }
+      if (window.scrollY >= skillsSectionOffset) {
+        menuRef.current.classList.remove("current_2");
+        menuRef.current.classList.add("current_3");
+      }
+      if (window.scrollY < workSectionOffset) {
+        menuRef.current.classList.remove("current_2");
+        menuRef.current.classList.remove("current_3");
+      }
+    });
+  }, []);
   const showMenu = (e) => {
     e.stopPropagation();
-    console.log(animating);
-    console.log("first click");
-    tl.current = gsap.timeline({
-      onComplete: () => {
-        animating = false;
-      },
-    });
-    if (!animating) {
-      animating = true;
-      tl.current
-        .set(q(".close-menu"), {
-          autoAlpha: 0,
-        })
-        .set(q(".menu-mobile-elem"), {
-          x: 1000,
-        })
-        .set(q(".menu-mobile-container"), {
-          display: "block",
-        })
-        .to(q(".yellow-bar"), {
-          x: 100,
-          duration: 0.5,
-          ease: "power3.out",
-        })
-        .to(
-          q(".purple-bar"),
-          {
-            x: 100,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          q(".blue-bar"),
-          {
-            x: 100,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          q(".menu-mobile-container"),
-          {
-            autoAlpha: 1,
-            duration: 0.8,
-          },
-          "-=1"
-        )
-        .to(
-          q(".close-menu"),
-          {
-            autoAlpha: 1,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(q(".menu-mobile-elem.yellow"), {
-          x: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        })
-        .to(
-          q(".menu-mobile-elem.purple"),
-          {
-            x: 0,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          q(".menu-mobile-elem.blue"),
-          {
-            x: 0,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        );
+    if (isOpen) {
+      menuRef.current.classList.remove("openMenu");
+      hoverAnim.current.classList.remove("menu-mobile-container__bubble__open");
+      setIsOpen(false);
+    } else {
+      hoverAnim.current.classList.add("menu-mobile-container__bubble__open");
+      hoverAnim.current.classList.remove(
+        "menu-mobile-container__bubble__hover"
+      );
+      setIsOpen(true);
+
+      menuRef.current.classList.add("openMenu");
     }
   };
-  const hideMenu = () => {
-    console.log(animating);
-    if (!animating) {
-      animating = true;
-      tl.current
-        .set(q(".close-menu"), {
-          autoAlpha: 0,
-        })
-        .to(q(".yellow-bar"), {
-          x: 100,
-          duration: 0.5,
-          ease: "power3.out",
-        })
-        .to(
-          q(".purple-bar"),
-          {
-            x: 100,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          q(".blue-bar"),
-          {
-            x: 100,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          q(".close-menu"),
-          {
-            autoAlpha: 1,
-            duration: 0.5,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .reversed(true);
-    }
+  const hideMenu = () => {};
+
+  const enterMenu = () => {
+    hoverAnim.current.classList.add("menu-mobile-container__bubble__hover");
+  };
+
+  const leaveMenu = () => {
+    hoverAnim.current.classList.remove("menu-mobile-container__bubble__hover");
   };
   return (
-    <nav ref={menuRef}>
+    <nav>
       <div className="menu-mobile">
-        <div className="barContainer" onClick={showMenu}>
+        <div
+          className="barContainer"
+          onClick={showMenu}
+          onMouseEnter={enterMenu}
+          onMouseLeave={leaveMenu}
+        >
           <div className="yellow-bar menu-bar"></div>
           <div className="purple-bar menu-bar"></div>
           <div className="blue-bar menu-bar"></div>
@@ -149,20 +70,21 @@ export default function Navbar() {
         <div className="close-menu" onClick={hideMenu}></div>
       </div>
       <div className="menu-mobile-container">
-        <ul>
+        <div className="menu-mobile-container__bubble" ref={hoverAnim}></div>
+        <ul ref={menuRef} className="current">
           <li>
-            <a href="#home" className="boldfont menu-mobile-elem yellow">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="boldfont menu-mobile-elem purple">
+            <a href="#about" className="boldfont menu-mobile-elem yellow">
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="boldfont menu-mobile-elem blue">
-              Projects
+            <a href="#projects" className="boldfont menu-mobile-elem purple">
+              Works
+            </a>
+          </li>
+          <li>
+            <a href="#skills" className="boldfont menu-mobile-elem purplePink">
+              Skills
             </a>
           </li>
         </ul>

@@ -1,12 +1,44 @@
 .skills {
   // background-color: #cc70d8;
   position: relative;
-  min-height: 80vh;
+  min-height: 60vh;
+  padding-bottom: 100px;
+
   * {
     color: white;
   }
+  .container {
+    max-width: 700px;
+  }
 
   &__content {
-    padding-top: 10px;
+    padding-top: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__icon {
+      position: relative;
+      width: fit-content;
+      margin: 30px;
+
+      p {
+        font-family: "consola";
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.4;
+      }
+      img {
+        width: 100px;
+        max-height: 100px;
+      }
+    }
+    &__icon11 {
+      img {
+        position: relative;
+        top: 25px;
+      }
+    }
   }
 }

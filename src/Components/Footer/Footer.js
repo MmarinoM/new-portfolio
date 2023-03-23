@@ -13,7 +13,7 @@ export default function Footer() {
               <br />
               Michael Marino
               <br />
-              2022
+              2023
             </p>
           </div>
           <img src={logoWhite} alt="logo" />
