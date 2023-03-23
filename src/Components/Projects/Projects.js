@@ -84,19 +84,6 @@ export default function Projects() {
   });
   const [projectArr] = useState([
     {
-      title: "Monizze",
-      type: "wordpress",
-      description:
-        "I made a QR game for clients containing sound-based games, puzzles & quizzes. I also made a statistics interface for customers to track players.",
-      tags: ["Wordpress", "jQuery", "Gutenberg"],
-      github: "www.github.com",
-      website: "https://www.monizze.be",
-      screen: "monizze",
-      video: "monizze",
-      partial: false,
-      id: 0,
-    },
-    {
       title: "Ludifica",
       type: "wordpress",
       description:
@@ -110,17 +97,17 @@ export default function Projects() {
       id: 1,
     },
     {
-      title: "Socatra",
+      title: "Monizze",
       type: "wordpress",
       description:
-        "I made this site for a construction company which gathers the last achievements of the company as well as their job offers and their last news.",
-      tags: ["Wordpress", "jQuery"],
-      github: "",
-      website: "https://www.socatra.be",
-      screen: "socatra",
-      video: "socatra",
+        "I made a QR game for clients containing sound-based games, puzzles & quizzes. I also made a statistics interface for customers to track players.",
+      tags: ["Wordpress", "jQuery", "Gutenberg"],
+      github: "www.github.com",
+      website: "https://www.monizze.be",
+      screen: "monizze",
+      video: "monizze",
       partial: false,
-      id: 2,
+      id: 0,
     },
     {
       title: "Pixus",
@@ -134,6 +121,19 @@ export default function Projects() {
       video: "pixus",
       partial: false,
       id: 3,
+    },
+    {
+      title: "Socatra",
+      type: "wordpress",
+      description:
+        "I made this site for a construction company which gathers the last achievements of the company as well as their job offers and their last news.",
+      tags: ["Wordpress", "jQuery"],
+      github: "",
+      website: "https://www.socatra.be",
+      screen: "socatra",
+      video: "socatra",
+      partial: false,
+      id: 2,
     },
     {
       title: "Accent",

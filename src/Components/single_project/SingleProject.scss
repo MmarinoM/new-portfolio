@@ -7,6 +7,9 @@
   flex-direction: column !important;
 
   margin-bottom: 100px;
+  @media (max-width: 550px) {
+    margin-bottom: 50px;
+  }
   &:hover {
     .singleProject__screen {
       .singleProject__screen__before {
@@ -23,6 +26,10 @@
     align-items: flex-end;
     padding-left: 20px;
     padding-right: 20px;
+    @media (max-width: 550px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     h2 {
       margin: 0;
       text-align: right;
@@ -52,6 +59,9 @@
       // width: calc(100% + 50px);
       color: white;
       font-size: 14px;
+      @media (max-width: 550px) {
+        max-width: 100%;
+      }
     }
     &__tags {
       margin-top: 10px;
