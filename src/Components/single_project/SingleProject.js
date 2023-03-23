@@ -12,6 +12,7 @@ import pixus from "../../assets/pixus.mp4";
 import socatra from "../../assets/socatra.mp4";
 import accent from "../../assets/accent.mp4";
 import lexing from "../../assets/lexing.mp4";
+import monizze from "../../assets/monizze.mp4";
 
 export default function SingleProject(props) {
   const videoRef = useRef(null);
@@ -56,6 +57,8 @@ export default function SingleProject(props) {
         return accent;
       case "lexing":
         return lexing;
+      case "monizze":
+        return monizze;
       default:
         return ludifica;
     }

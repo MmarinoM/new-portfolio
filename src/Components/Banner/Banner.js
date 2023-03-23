@@ -7,6 +7,7 @@ import { ReactComponent as Logo } from "../../assets/github.svg";
 import { ReactComponent as LogoLinkedin } from "../../assets/linkedin.svg";
 import { ReactComponent as LogoEmail } from "../../assets/email.svg";
 import { ReactComponent as LogoResume } from "../../assets/resume.svg";
+import pdfCv from "../../assets/mam-cv.pdf";
 export default function Banner() {
   const tl = useRef();
   useEffect(() => {
@@ -145,10 +146,31 @@ export default function Banner() {
             </p>
           </div>
           <div className="banner__imgContainer">
-            <Logo />
-            <LogoLinkedin />
-            <LogoEmail />
-            <LogoResume />
+            <a
+              href="https://github.com/MmarinoM"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Logo />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/marino-m/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LogoLinkedin />
+            </a>
+            {/* mailto: marino.michael.1990@gmail.com */}
+            <a
+              href="mailto:marino.michael.1990@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LogoEmail />
+            </a>
+            <a href={pdfCv} target="_blank" rel="noreferrer">
+              <LogoResume />
+            </a>
           </div>
         </div>
       </div>
