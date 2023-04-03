@@ -17,7 +17,6 @@ export default function Projects() {
   // const tl = useRef();
   useEffect(() => {
     revealRefs.current.forEach((el, index) => {
-      console.log(index);
       const q = gsap.utils.selector(el);
       if ((index + 1) % 2 === 0) {
         gsap.fromTo(
@@ -140,7 +139,7 @@ export default function Projects() {
       screen: "lexing",
       video: "lexing",
       partial: false,
-      id: 4,
+      id: 7,
     },
     {
       title: "Twitter Clone",

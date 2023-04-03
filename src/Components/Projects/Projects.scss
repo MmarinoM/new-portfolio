@@ -48,6 +48,10 @@
   top: 0;
   animation: my-animation 50s infinite linear;
   white-space: nowrap;
+  @media (max-width: 800px) {
+    font-size: 50px;
+    left: -1560px;
+  }
 }
 .movingTextSecond {
   left: 0;

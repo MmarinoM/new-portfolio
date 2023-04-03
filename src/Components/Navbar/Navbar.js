@@ -12,27 +12,22 @@ export default function Navbar() {
       const workSectionOffset =
         document.querySelector(".projects").offsetTop - 100;
       const skillsSectionOffset =
-        document.querySelector(".skills").offsetTop - 200;
-      console.log(workSectionOffset);
-      console.log(skillsSectionOffset);
-      console.log(window.scrollY);
-      if (window.scrollY >= workSectionOffset) {
-        menuRef.current.classList.add("current_2");
-      } else if (window.scrollY < workSectionOffset) {
-        menuRef.current.classList.remove("current_2");
-        menuRef.current.classList.remove("current_3");
-      } else if (window.scrollY >= skillsSectionOffset) {
-        menuRef.current.classList.remove("current_2");
+        document.querySelector(".skills").offsetTop - 1000;
+      if (window.scrollY >= skillsSectionOffset) {
         menuRef.current.classList.add("current_3");
+        menuRef.current.classList.remove("current_2");
+      } else if (window.scrollY > workSectionOffset) {
+        menuRef.current.classList.add("current_2");
+        menuRef.current.classList.remove("current_3");
+      } else {
+        menuRef.current.classList.remove("current_2");
+        menuRef.current.classList.add("current");
       }
     });
   }, []);
   const btnGoTo = (id) => {
-    console.log(id);
     const section = document.querySelector(`#${id}`);
-    console.log(section);
     const sectionOffset = section.offsetTop;
-    console.log(sectionOffset);
     window.scrollTo({
       top: sectionOffset,
       behavior: "smooth",

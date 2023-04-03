@@ -20,11 +20,14 @@ export default function SingleProject(props) {
   const videoRef = useRef(null);
 
   const handleHover = () => {
+    //if video is coming soon, do nothing
+    if (getVideoImport(props.single.video) === comingSoon) return;
     videoRef.current.currentTime = 0;
     videoRef.current.play();
   };
 
   const handleMouseLeave = () => {
+    if (getVideoImport(props.single.video) === comingSoon) return;
     videoRef.current.pause();
   };
 

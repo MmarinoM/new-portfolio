@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Skills.scss";
 import skill1 from "../../assets/skill/skill1.svg";
 import skill2 from "../../assets/skill/skill2.svg";
@@ -15,13 +15,60 @@ import skill12 from "../../assets/skill/skill12.svg";
 import skill13 from "../../assets/skill/skill13.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Skills() {
+  function shuffleIcons() {
+    const icons = document.querySelectorAll(".skills__content__icon");
+    const iconArray = Array.from(icons);
+    return iconArray;
+  }
+  function shuffleArray(array) {
+    let currentIndex = array.length;
+    let temporaryValue;
+    let randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+  useEffect(() => {
+    gsap.utils.toArray(".skills").forEach((section) => {
+      const icons = shuffleIcons();
+      const shuffledIcons = shuffleArray(icons);
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 50%",
+        onEnter: () => {
+          gsap.to(shuffledIcons, {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+          });
+        },
+      });
+    });
+  }, []);
   return (
     <section className="skills">
       <div className="container">
         <div className="skills__content">
           <h2 className="boldfont movingText">
+            ■ Skills ■ Competences ■ Skills ■ Competences ■ Skills ■ Competences
+          </h2>
+          <h2 className="boldfont movingText movingTextSecond">
             ■ Skills ■ Competences ■ Skills ■ Competences ■ Skills ■ Competences
           </h2>
           <div className="skills__content__icon skills__content__icon1">

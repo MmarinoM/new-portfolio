@@ -9,6 +9,31 @@
   .container {
     max-width: 700px;
   }
+  .movingText {
+    color: white;
+    font-size: 72px;
+    max-width: none;
+    position: absolute;
+    left: -2560px;
+    top: 0;
+    animation: my-animation 50s infinite linear;
+    white-space: nowrap;
+    @media (max-width: 800px) {
+      font-size: 50px;
+      left: -1798px;
+    }
+  }
+  .movingTextSecond {
+    left: 0;
+  }
+  @keyframes my-animation {
+    from {
+      -webkit-transform: translateX(0%);
+    }
+    to {
+      -webkit-transform: translateX(100%);
+    }
+  }
 
   &__content {
     padding-top: 180px;
@@ -22,6 +47,7 @@
       position: relative;
       width: fit-content;
       margin: 30px;
+      opacity: 0;
 
       p {
         font-family: "consola";
