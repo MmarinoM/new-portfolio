@@ -24,13 +24,13 @@ export default function Projects() {
           q(".singleProject__screen"),
           {
             opacity: 0,
-            x: 100,
+            y: 100,
           },
           {
             duration: 1,
             autoAlpha: 1,
 
-            x: 0,
+            y: 0,
             scrollTrigger: {
               id: `project-${index + 1}`,
               trigger: el,
@@ -44,13 +44,14 @@ export default function Projects() {
           q(".singleProject__screen"),
           {
             opacity: 0,
-            x: -100,
+            y: 100,
           },
           {
             duration: 1,
             autoAlpha: 1,
+            delay: 0.2,
 
-            x: 0,
+            y: 0,
             scrollTrigger: {
               id: `project-${index + 1}`,
               trigger: el,
@@ -60,26 +61,6 @@ export default function Projects() {
           }
         );
       }
-      // gsap.fromTo(
-      //   q(".singleProject__info"),
-      //   {
-      //     opacity: 0,
-      //     y: 100,
-      //   },
-      //   {
-      //     duration: 1,
-      //     autoAlpha: 1,
-
-      //     y: 0,
-      //     zIndex: 10,
-      //     scrollTrigger: {
-      //       id: `project-${index + 1}`,
-      //       trigger: el,
-      //       start: "top 80%",
-      //       toggleActions: "play none none pause",
-      //     },
-      //   }
-      // );
     });
   });
   const [projectArr] = useState([
@@ -161,9 +142,35 @@ export default function Projects() {
       partial: false,
       id: 4,
     },
+    {
+      title: "Twitter Clone",
+      type: "wordpress",
+      description:
+        "It features a similar layout and functionality to Twitter, including user authentication, the ability to post tweets and follow other users, and a real-time feed of tweets.",
+      tags: ["React", "Express.Js", "Material-ui", "MongoDB"],
+      github: "",
+      website: "https://github.com/MmarinoM/twitter-clone",
+      screen: "github",
+      video: "comingsoon",
+      partial: false,
+      id: 5,
+    },
+    {
+      title: "Inter milan trivia",
+      type: "wordpress",
+      description:
+        "A quiz game where users have to match the Inter Milan players with their shirt numbers. This app offers a fun way for fans to test their knowledge of the team.",
+      tags: ["React"],
+      github: "",
+      website: "https://github.com/MmarinoM/InterMilanTrivia",
+      screen: "github",
+      video: "comingsoon",
+      partial: false,
+      id: 6,
+    },
   ]);
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="container">
         <div className="projects__content">
           <h2 className="boldfont movingText">

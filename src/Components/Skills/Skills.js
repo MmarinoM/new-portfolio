@@ -13,6 +13,8 @@ import skill10 from "../../assets/skill/skill10.svg";
 import skill11 from "../../assets/skill/skill11.svg";
 import skill12 from "../../assets/skill/skill12.svg";
 import skill13 from "../../assets/skill/skill13.svg";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Skills() {
   return (

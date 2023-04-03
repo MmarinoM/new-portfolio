@@ -7,12 +7,14 @@ import screenLexing from "../../assets/lexing.jpg";
 import screenPixus from "../../assets/pixus.jpg";
 import screenSocatra from "../../assets/socatra.jpg";
 import screenAccent from "../../assets/accent.jpg";
+import screenGit from "../../assets/gitbg.jpg";
 import ludifica from "../../assets/vid.mp4";
 import pixus from "../../assets/pixus.mp4";
 import socatra from "../../assets/socatra.mp4";
 import accent from "../../assets/accent.mp4";
 import lexing from "../../assets/lexing.mp4";
 import monizze from "../../assets/monizze.mp4";
+import comingSoon from "../../assets/comingsoon.jpg";
 
 export default function SingleProject(props) {
   const videoRef = useRef(null);
@@ -40,6 +42,8 @@ export default function SingleProject(props) {
         return screenSocatra;
       case "accent":
         return screenAccent;
+      case "github":
+        return screenGit;
       default:
         return screenLudifica;
     }
@@ -59,6 +63,8 @@ export default function SingleProject(props) {
         return lexing;
       case "monizze":
         return monizze;
+      case "comingsoon":
+        return comingSoon;
       default:
         return ludifica;
     }
@@ -77,13 +83,17 @@ export default function SingleProject(props) {
             backgroundImage: `url(${getImgImport(props.single.screen)})`,
           }}
         ></div>
-        <video
-          loop
-          muted
-          width="100%"
-          src={getVideoImport(props.single.video)}
-          ref={videoRef}
-        ></video>
+        {getVideoImport(props.single.video) !== comingSoon ? (
+          <video
+            loop
+            muted
+            width="100%"
+            src={getVideoImport(props.single.video)}
+            ref={videoRef}
+          ></video>
+        ) : (
+          <img src={comingSoon} alt="coming soon" />
+        )}
       </a>
       <div className="singleProject__info">
         <h2 className="boldfont">{props.single.title}</h2>

@@ -122,7 +122,7 @@ export default function Banner() {
   });
 
   return (
-    <div className="banner">
+    <div className="banner" id="about">
       <div className="bubblemove yellow"></div>
       <div className="bubblemove purple"></div>
       <div className="bubblemove blue"></div>

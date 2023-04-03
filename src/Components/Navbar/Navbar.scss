@@ -86,14 +86,14 @@ nav {
       padding-left: 30px;
       padding-right: 30px;
       margin: 0 auto;
-      transition: 0.3s ease-in-out;
+      transition: 0.7s ease-in-out;
       background-color: #434343;
-      border-radius: 30px;
+      border-radius: 5px;
       position: relative;
-      top: -52px;
+      top: -120px;
       @media (max-width: 550px) {
         transform: scale(0.7);
-        top: -50px;
+        top: -100px;
       }
       li {
         margin-right: 10px;
@@ -101,7 +101,10 @@ nav {
           margin-right: 0;
         }
       }
-      a {
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;

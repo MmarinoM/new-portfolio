@@ -18,17 +18,26 @@ export default function Navbar() {
       console.log(window.scrollY);
       if (window.scrollY >= workSectionOffset) {
         menuRef.current.classList.add("current_2");
-      }
-      if (window.scrollY >= skillsSectionOffset) {
+      } else if (window.scrollY < workSectionOffset) {
+        menuRef.current.classList.remove("current_2");
+        menuRef.current.classList.remove("current_3");
+      } else if (window.scrollY >= skillsSectionOffset) {
         menuRef.current.classList.remove("current_2");
         menuRef.current.classList.add("current_3");
       }
-      if (window.scrollY < workSectionOffset) {
-        menuRef.current.classList.remove("current_2");
-        menuRef.current.classList.remove("current_3");
-      }
     });
   }, []);
+  const btnGoTo = (id) => {
+    console.log(id);
+    const section = document.querySelector(`#${id}`);
+    console.log(section);
+    const sectionOffset = section.offsetTop;
+    console.log(sectionOffset);
+    window.scrollTo({
+      top: sectionOffset,
+      behavior: "smooth",
+    });
+  };
   const showMenu = (e) => {
     e.stopPropagation();
     if (isOpen) {
@@ -73,19 +82,30 @@ export default function Navbar() {
         <div className="menu-mobile-container__bubble" ref={hoverAnim}></div>
         <ul ref={menuRef} className="current">
           <li>
-            <a href="#about" className="boldfont menu-mobile-elem yellow">
+            <button
+              onClick={() => btnGoTo("about")}
+              className="boldfont menu-mobile-elem yellow"
+            >
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#projects" className="boldfont menu-mobile-elem purple">
+            <button
+              onClick={() => btnGoTo("projects")}
+              data="projects"
+              className="boldfont menu-mobile-elem purple"
+            >
               Works
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#skills" className="boldfont menu-mobile-elem purplePink">
+            <button
+              onClick={() => btnGoTo("footer")}
+              data="skills"
+              className="boldfont menu-mobile-elem purplePink"
+            >
               Skills
-            </a>
+            </button>
           </li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ import logoWhite from "../../assets/logo-white.svg";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="container">
         <div className="footer__content">
           <div className="footer__content__txt">
