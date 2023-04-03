@@ -13,7 +13,11 @@
   &:hover {
     .singleProject__screen {
       .singleProject__screen__before {
-        height: 0;
+        // height: 0;
+        //if window screen > 900
+        @media (min-width: 900px) {
+          height: 0;
+        }
       }
     }
   }

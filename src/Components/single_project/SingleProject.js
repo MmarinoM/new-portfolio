@@ -18,16 +18,20 @@ import comingSoon from "../../assets/comingsoon.jpg";
 
 export default function SingleProject(props) {
   const videoRef = useRef(null);
+  const windowWidth = window.innerWidth;
 
   const handleHover = () => {
     //if video is coming soon, do nothing
-    if (getVideoImport(props.single.video) === comingSoon) return;
+    //get window width
+    if (getVideoImport(props.single.video) === comingSoon || windowWidth < 900)
+      return;
     videoRef.current.currentTime = 0;
     videoRef.current.play();
   };
 
   const handleMouseLeave = () => {
-    if (getVideoImport(props.single.video) === comingSoon) return;
+    if (getVideoImport(props.single.video) === comingSoon || windowWidth < 900)
+      return;
     videoRef.current.pause();
   };
 
@@ -79,7 +83,12 @@ export default function SingleProject(props) {
       onMouseEnter={handleHover}
       onMouseLeave={handleMouseLeave}
     >
-      <a href={props.single.website} className="singleProject__screen">
+      <a
+        href={props.single.website}
+        target="_blank"
+        rel="noreferrer"
+        className="singleProject__screen"
+      >
         <div
           className="singleProject__screen__before"
           style={{
