@@ -15,6 +15,9 @@ import accent from "../../assets/accent.mp4";
 import lexing from "../../assets/lexing.mp4";
 import monizze from "../../assets/monizze.mp4";
 import comingSoon from "../../assets/comingsoon.jpg";
+import airbnb from "../../assets/airbnb.jpg";
+import shirt from "../../assets/shirt.jpg";
+import screenShirt from "../../assets/shirt.mp4";
 
 export default function SingleProject(props) {
   const videoRef = useRef(null);
@@ -51,6 +54,10 @@ export default function SingleProject(props) {
         return screenAccent;
       case "github":
         return screenGit;
+      case "airbnb":
+        return airbnb;
+      case "shirt":
+        return shirt;
       default:
         return screenLudifica;
     }
@@ -70,6 +77,8 @@ export default function SingleProject(props) {
         return lexing;
       case "monizze":
         return monizze;
+      case "shirt":
+        return screenShirt;
       case "comingsoon":
         return comingSoon;
       default:
