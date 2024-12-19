@@ -80,7 +80,7 @@ export default function Projects() {
       title: 'Monizze',
       type: 'wordpress',
       description:
-        'I made a QR game for clients containing sound-based games, puzzles & quizzes. I also made a statistics interface for customers to track players.',
+        'I made this website full editable using only Gutenberg & ACF',
       tags: ['Wordpress', 'jQuery', 'Gutenberg'],
       github: 'www.github.com',
       website: 'https://www.monizze.be',
