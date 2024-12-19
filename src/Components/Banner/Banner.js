@@ -1,28 +1,23 @@
-import React from "react";
-import "./Banner.scss";
-import gsap from "gsap";
-import { useRef, useEffect } from "react";
+import React from 'react';
+import './Banner.scss';
+import gsap from 'gsap';
+import { useRef, useEffect } from 'react';
 // import frontEnd from "../../assets/front-end.svg";
-import { ReactComponent as Logo } from "../../assets/github.svg";
-import { ReactComponent as LogoLinkedin } from "../../assets/linkedin.svg";
-import { ReactComponent as LogoEmail } from "../../assets/email.svg";
-import { ReactComponent as LogoResume } from "../../assets/resume.svg";
-import pdfCv from "../../assets/mam-cv.pdf";
+import { ReactComponent as Logo } from '../../assets/github.svg';
+import { ReactComponent as LogoLinkedin } from '../../assets/linkedin.svg';
+import { ReactComponent as LogoEmail } from '../../assets/email.svg';
+import { ReactComponent as LogoResume } from '../../assets/resume.svg';
+import pdfCv from '../../assets/mam-cv.pdf';
 export default function Banner() {
   const tl = useRef();
   useEffect(() => {
-    let animating = false;
-    tl.current = gsap.timeline({
-      onComplete: () => {
-        animating = false;
-      },
-    });
+    tl.current = gsap.timeline({});
     tl.current
       .fromTo(
-        ".bubblemove.purple",
+        '.bubblemove.purple',
         {
           opacity: 0,
-          ease: "power3.out",
+          ease: 'power3.out',
         },
         {
           opacity: 1,
@@ -30,22 +25,22 @@ export default function Banner() {
         }
       )
       .fromTo(
-        ".bubblemove.blue",
+        '.bubblemove.blue',
         {
           opacity: 0,
-          ease: "power3.out",
+          ease: 'power3.out',
         },
         {
           opacity: 1,
           y: 0,
         },
-        "-=0.2"
+        '-=0.2'
       )
       .fromTo(
-        ".bubblemove.yellow",
+        '.bubblemove.yellow',
         {
           opacity: 0,
-          ease: "power3.out",
+          ease: 'power3.out',
         },
         {
           opacity: 1,
@@ -53,7 +48,7 @@ export default function Banner() {
         }
       )
       .staggerFromTo(
-        ".stag",
+        '.stag',
         0.3,
         {
           opacity: 0,
@@ -64,10 +59,10 @@ export default function Banner() {
           y: 0,
         },
         0.2,
-        "-=0.5"
+        '-=0.5'
       )
       .staggerFromTo(
-        ".calque_anim",
+        '.calque_anim',
         0.3,
         {
           opacity: 0,
@@ -78,22 +73,22 @@ export default function Banner() {
           scale: 1,
         },
         0.15,
-        "-=0.5"
+        '-=0.5'
       )
       .fromTo(
-        ".logo",
+        '.logo',
         2,
         {
           opacity: 0,
-          ease: "power3.out",
+          ease: 'power3.out',
         },
         {
           opacity: 1,
         },
-        "-=1.5"
+        '-=1.5'
       )
       .staggerFromTo(
-        ".menu-bar",
+        '.menu-bar',
         1,
         {
           opacity: 0,
@@ -102,13 +97,13 @@ export default function Banner() {
         {
           opacity: 1,
           x: 0,
-          ease: "power3.out",
+          ease: 'power3.out',
         },
         0.1,
-        "-=2"
+        '-=2'
       )
       .fromTo(
-        "section",
+        'section',
         {
           opacity: 0,
           y: 100,
@@ -117,7 +112,7 @@ export default function Banner() {
           opacity: 1,
           y: 0,
         },
-        "-=0.5"
+        '-=0.5'
       );
   });
 
@@ -137,12 +132,11 @@ export default function Banner() {
               {/* <img src={frontEnd} alt="" className="front-end" /> */}
             </h1>
             <p className="consola about stag">
-              Hi! I’m Michael. I’m 33, I’m a front-end developer based in Liège,
+              Hi! I’m Michael. I’m 34, I’m a front-end developer based in Liège,
               Belgium. I worked in a web agency where I developed websites and
               mobile applications for customers. I love both code and design.
               I’m currently honing my react skills. When I’m not coding, I like
-              listen to a loooooot of music and play some squash or basketball.
-              On weekends, I tend to morph into a hard-core Inter Milan fan.
+              listen to a loooooot of music and play some padel or basketball.
             </p>
           </div>
           <div className="banner__imgContainer">

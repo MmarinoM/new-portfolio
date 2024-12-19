@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import "./Skills.scss";
-import skill1 from "../../assets/skill/skill1.svg";
-import skill2 from "../../assets/skill/skill2.svg";
-import skill3 from "../../assets/skill/skill3.svg";
-import skill4 from "../../assets/skill/skill4.svg";
+import React, { useEffect } from 'react';
+import './Skills.scss';
+import skill1 from '../../assets/skill/skill1.svg';
+import skill2 from '../../assets/skill/skill2.svg';
+import skill3 from '../../assets/skill/skill3.svg';
+import skill4 from '../../assets/skill/skill4.svg';
 // import skill5 from "../../assets/skill/skill5.svg";
-import skill6 from "../../assets/skill/skill6.svg";
-import skill7 from "../../assets/skill/skill7.svg";
-import skill8 from "../../assets/skill/skill8.svg";
-import skill9 from "../../assets/skill/skill9.svg";
-import skill10 from "../../assets/skill/skill10.svg";
-import skill11 from "../../assets/skill/skill11.svg";
-import skill12 from "../../assets/skill/skill12.svg";
-import skill13 from "../../assets/skill/skill13.svg";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import skill6 from '../../assets/skill/skill6.svg';
+import skill7 from '../../assets/skill/skill7.svg';
+import skill8 from '../../assets/skill/skill8.svg';
+import skill9 from '../../assets/skill/skill9.svg';
+import skill10 from '../../assets/skill/skill10.svg';
+import skill11 from '../../assets/skill/skill11.svg';
+import skill12 from '../../assets/skill/skill12.svg';
+import skill13 from '../../assets/skill/skill13.svg';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Skills() {
   function shuffleIcons() {
-    const icons = document.querySelectorAll(".skills__content__icon");
+    const icons = document.querySelectorAll('.skills__content__icon');
     const iconArray = Array.from(icons);
     return iconArray;
   }
@@ -43,13 +43,13 @@ export default function Skills() {
     return array;
   }
   useEffect(() => {
-    gsap.utils.toArray(".skills").forEach((section) => {
+    gsap.utils.toArray('.skills').forEach((section) => {
       const icons = shuffleIcons();
       const shuffledIcons = shuffleArray(icons);
 
       ScrollTrigger.create({
         trigger: section,
-        start: "top 50%",
+        start: 'top 50%',
         onEnter: () => {
           gsap.to(shuffledIcons, {
             duration: 1,
@@ -77,7 +77,7 @@ export default function Skills() {
           </div>
           <div className="skills__content__icon skills__content__icon2">
             <img src={skill2} alt="skill2" className="skillIcon skillIcon2" />
-            <p>Angular</p>
+            <p>VueJs</p>
           </div>
           <div className="skills__content__icon skills__content__icon3">
             <img src={skill3} alt="skill3" className="skillIcon skillIcon3" />

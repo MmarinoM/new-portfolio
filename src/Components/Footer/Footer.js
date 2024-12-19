@@ -1,6 +1,6 @@
-import React from "react";
-import "./Footer.scss";
-import logoWhite from "../../assets/logo-white.svg";
+import React from 'react';
+import './Footer.scss';
+import logoWhite from '../../assets/logo-white.svg';
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
               <br />
               Michael Marino
               <br />
-              2023
+              2024
             </p>
           </div>
           <img src={logoWhite} alt="logo" />

@@ -1,23 +1,27 @@
-import React from "react";
-import { useRef } from "react";
-import "./SingleProject.scss";
-import screenLudifica from "../../assets/ludifica.jpg";
-import screenMonizze from "../../assets/monizze.jpg";
-import screenLexing from "../../assets/lexing.jpg";
-import screenPixus from "../../assets/pixus.jpg";
-import screenSocatra from "../../assets/socatra.jpg";
-import screenAccent from "../../assets/accent.jpg";
-import screenGit from "../../assets/gitbg.jpg";
-import ludifica from "../../assets/vid.mp4";
-import pixus from "../../assets/pixus.mp4";
-import socatra from "../../assets/socatra.mp4";
-import accent from "../../assets/accent.mp4";
-import lexing from "../../assets/lexing.mp4";
-import monizze from "../../assets/monizze.mp4";
-import comingSoon from "../../assets/comingsoon.jpg";
-import airbnb from "../../assets/airbnb.jpg";
-import shirt from "../../assets/shirt.jpg";
-import screenShirt from "../../assets/shirt.mp4";
+import React from 'react';
+import { useRef } from 'react';
+import './SingleProject.scss';
+import screenLudifica from '../../assets/ludifica.jpg';
+import screenMonizze from '../../assets/monizze.jpg';
+import screenLexing from '../../assets/lexing.jpg';
+import screenPixus from '../../assets/pixus.jpg';
+import screenSocatra from '../../assets/socatra.jpg';
+import screenCll from '../../assets/cll.jpg';
+import screenEloy from '../../assets/eloy.jpg';
+import screenJohn from '../../assets/john.jpg';
+import screenBelife from '../../assets/belife.jpg';
+import screenAccent from '../../assets/accent.jpg';
+import screenGit from '../../assets/gitbg.jpg';
+import ludifica from '../../assets/vid.mp4';
+import pixus from '../../assets/pixus.mp4';
+import socatra from '../../assets/socatra.mp4';
+import accent from '../../assets/accent.mp4';
+import lexing from '../../assets/lexing.mp4';
+import monizze from '../../assets/monizze.mp4';
+import comingSoon from '../../assets/comingsoon.jpg';
+import airbnb from '../../assets/airbnb.jpg';
+import shirt from '../../assets/shirt.jpg';
+import screenShirt from '../../assets/shirt.mp4';
 
 export default function SingleProject(props) {
   const videoRef = useRef(null);
@@ -40,24 +44,32 @@ export default function SingleProject(props) {
 
   const getImgImport = (img) => {
     switch (img) {
-      case "ludifica":
+      case 'ludifica':
         return screenLudifica;
-      case "monizze":
+      case 'monizze':
         return screenMonizze;
-      case "lexing":
+      case 'lexing':
         return screenLexing;
-      case "pixus":
+      case 'pixus':
         return screenPixus;
-      case "socatra":
+      case 'socatra':
         return screenSocatra;
-      case "accent":
+      case 'accent':
         return screenAccent;
-      case "github":
+      case 'github':
         return screenGit;
-      case "airbnb":
+      case 'airbnb':
         return airbnb;
-      case "shirt":
+      case 'shirt':
         return shirt;
+      case 'cll':
+        return screenCll;
+      case 'belife':
+        return screenBelife;
+      case 'john':
+        return screenJohn;
+      case 'eloy':
+        return screenEloy;
       default:
         return screenLudifica;
     }
@@ -65,21 +77,21 @@ export default function SingleProject(props) {
 
   const getVideoImport = (video) => {
     switch (video) {
-      case "pixus":
+      case 'pixus':
         return pixus;
-      case "ludifica":
+      case 'ludifica':
         return ludifica;
-      case "socatra":
+      case 'socatra':
         return socatra;
-      case "accent":
+      case 'accent':
         return accent;
-      case "lexing":
+      case 'lexing':
         return lexing;
-      case "monizze":
+      case 'monizze':
         return monizze;
-      case "shirt":
+      case 'shirt':
         return screenShirt;
-      case "comingsoon":
+      case 'comingsoon':
         return comingSoon;
       default:
         return ludifica;
